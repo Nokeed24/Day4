@@ -1,4 +1,6 @@
 var todoList = [];
+var activeList = [];
+
 
 function submitTodo(event) {
   // stop the form from doing the default action, submitting...
@@ -36,6 +38,7 @@ function createTodo(title) {
 
   $("#todolist").append( listItem );
   todoList.push(listItem[0].innerText);
+  activeList.push(listItem[0].innerText);
   console.log("listItem: ");
   console.log(todoList);
   localStorage.todoList = todoList;
@@ -52,11 +55,12 @@ function toggleDone() {
   var checkbox = this;
 
   $(checkbox).parent().toggleClass("completed");
+  updateCounters();
 }
 
 function updateCounters() {
-  var todoCount = $(".todo").length;
-  var completedCount = $(".completed").length;
+  var todoCount = activeList.length;
+  var completedCount = $(".completed").length-1;
   console.log("todoCount: " + todoCount);
 
   $("#total-count").html(todoCount);
@@ -65,6 +69,8 @@ function updateCounters() {
 }
 
 function cleanUpDoneTodos(event) {
+  activeList = [];
+  console.log("ActiveList: " + activeList);
   event.preventDefault();
   $.when($(".completed").remove())
     .then(updateCounters);
