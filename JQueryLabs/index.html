@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web design playground</title>
+  <style>
+    #container {
+      margin: 20px auto;
+      width: 70%;
+    }
+    h1 {
+      font: bold 25px helvetica, arial, sans-serif;
+      text-align: center;
+    }
+    h2 {
+      font: bold 20px helvetica, arial, sans-serif;
+    }
+    #canvas {
+      border: 1px dashed #000;
+      padding: 10px;
+      font: 16px/18px "times new roman", times, serif;
+    }
+    #controls {
+      display: -webkit-flex;
+      display: flex;
+    }
+    .control {
+      width: 33%;
+    }
+    .control ul {
+      list-style: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Color and font playground</h1>
+
+    <form>
+    <div id="controls">
+      <div class="control">
+        <h2>Font</h2>
+        <ul>
+          <li><label><input type="radio" name="fontname" value="arial"> Arial</label></li>
+          <li><label><input type="radio" name="fontname" value="courier"> Courier</label></li>
+          <li><label><input type="radio" name="fontname" value="georgia"> Georgia</label></li>
+          <li><label><input type="radio" name="fontname" value="times" checked> Times New Roman</label></li>
+          <li><label><input type="radio" name="fontname" value="verdana"> Verdana</label></li>
+        </ul>
+      </div>
+      <div class="control">
+        <h2>Color</h2>
+        <p>Text: <input id="textcolor" type="text" name="textcolor" value="#000" size="7"></p>
+        <p>Background: <input id="bgcolor" type="text" name="bgcolor" value="#fff" size="7"></p>
+      </div>
+      <div class="control">
+        <h2>Spacing</h2>
+        <p>Text size: <input id="textsize" type="text" name="textsize" value="16" size="5"></p>
+        <p>Line height: <input id="lineheight" type="text" name="lineheight" value="18" size="5"></p>
+        <p>Padding: <input id="textpadding" type="text" name="textpadding" value="10" size="5"></p>
+
+      </div>
+    </div>
+    </form>
+
+    <div id="canvas">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+
+  </div>
+<script>
+// JavaScript goes here.
+</script>
+</body>
+</html>
