@@ -13,4 +13,7 @@ function updateCounters() {
   $("#todo-count").html(todoCount - completedCount);
 }
 
-updateCounters();
+$(document).ready(function() {
+  $("input[type=checkbox]").on('change', toggleDone);
+  updateCounters();
+});
