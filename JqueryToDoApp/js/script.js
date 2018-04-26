@@ -57,6 +57,7 @@ function toggleDone() {
 function updateCounters() {
   var todoCount = $(".todo").length;
   var completedCount = $(".completed").length;
+  console.log("todoCount: " + todoCount);
 
   $("#total-count").html(todoCount);
   $("#completed-count").html(completedCount);
@@ -74,15 +75,17 @@ function checkForSavedData()
   if (localStorage.todoList)
   {
     console.log("You have stored data");
+    console.log(localStorage.todoList);
   }
   else
   {
-    console.log("you don't have any saved data")
+    console.log("you don't have any saved data");
   }
 }
 
 $(document).ready(function() {
   $("input[type=checkbox]").on('change', toggleDone);
+  checkForSavedData();
   updateCounters();
 });
 
