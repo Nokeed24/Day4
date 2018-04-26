@@ -1,3 +1,5 @@
+var todoList = [];
+
 function submitTodo(event) {
   // stop the form from doing the default action, submitting...
   event.preventDefault();
@@ -33,6 +35,11 @@ function createTodo(title) {
   listItem.append(label);
 
   $("#todolist").append( listItem );
+  todoList.push(listItem[0].innerText);
+  console.log("listItem: ");
+  console.log(todoList);
+  localStorage.todoList = todoList;
+  console.log(localStorage.todoList);
 
   updateCounters();
 }
@@ -60,6 +67,18 @@ function cleanUpDoneTodos(event) {
   event.preventDefault();
   $.when($(".completed").remove())
     .then(updateCounters);
+}
+
+function checkForSavedData()
+{
+  if (localStorage.todoList)
+  {
+    console.log("You have stored data");
+  }
+  else
+  {
+    console.log("you don't have any saved data")
+  }
 }
 
 $(document).ready(function() {
