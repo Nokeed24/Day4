@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Lots of scripts!</title>
+        <script>
+            console.log('head', document.getElementById('header-id'));
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('DOMContentLoaded', document.getElementById('header-id'))
+            });
+        </script>
+    </head>
+    <body>
+        <script>
+            console.log('body top', document.getElementById('header-id'))
+        </script>
+        <h1 id="header-id">HEADER</h1>
+        <script>
+            console.log('body bottom', document.getElementById('header-id'))
+        </script>
+    </body>
+</html>
