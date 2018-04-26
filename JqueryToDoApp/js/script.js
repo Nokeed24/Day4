@@ -56,9 +56,17 @@ function updateCounters() {
   $("#todo-count").html(todoCount - completedCount);
 }
 
+function cleanUpDoneTodos(event) {
+  event.preventDefault();
+  $.when($(".completed").remove())
+    .then(updateCounters);
+}
+
 $(document).ready(function() {
   $("input[type=checkbox]").on('change', toggleDone);
   updateCounters();
 });
 
 $("form").on('submit', submitTodo);
+
+$("#clean-up").on('click', cleanUpDoneTodos);
