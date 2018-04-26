@@ -9,6 +9,8 @@ $(document).ready(function() {
     $('#canvas').css('color', e.target.value);
   });
 
-
+  $('#bgcolor').change(function(e) {
+    $('#canvas').css('background-color', e.target.value);
+  });
 
 });
