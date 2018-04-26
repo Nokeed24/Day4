@@ -1,3 +1,9 @@
+function toggleDone() {
+  var checkbox = this;
+
+  $(checkbox).parent().toggleClass("completed");
+}
+
 function updateCounters() {
   var todoCount = $(".todo").length;
   var completedCount = $(".completed").length;
